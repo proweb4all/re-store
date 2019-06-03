@@ -1,16 +1,23 @@
-import React from 'react';
-import './shop-header.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./shop-header.css";
 
 const ShopHeader = ({ numItems, total }) => {
-    return (
-        <header className='shop-header row'>
-            <a className='logo text-dark' href='#'>Restore</a>
-            <a className='shopping-cart'>
-                <i className='cart-icon fa fa-shopping-cart' />
-                {numItems} item (${total})
-            </a>
-        </header>
-    )
+  return (
+    <header className="shop-header row">
+      <Link to="/">
+        <div className="logo text-dark" href="#">
+          Restore
+        </div>
+      </Link>
+      <Link to="/cart">
+        <div className="shopping-cart">
+          <i className="cart-icon fa fa-shopping-cart" />
+          {numItems} item (${total})
+        </div>
+      </Link>
+    </header>
+  );
 };
 
 export default ShopHeader;
